@@ -1,0 +1,6 @@
+pandas
+numpy
+requests
+selenium
+boto3
+selectolax

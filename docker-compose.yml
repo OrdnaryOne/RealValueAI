@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  avito_parser:
+    build: .
+    container_name: avito_parser
+    environment:
+      - TZ=Europe/Moscow
+    volumes:
+      - .:/app
+    restart: unless-stopped
+
+  yandex_parser:
+    build: .
+    container_name: yandex_parser
+    environment:
+      - TZ=Europe/Moscow
+    volumes:
+      - .:/app
+    command: python3 Parser_Yand_segm_v6.py
+    restart: unless-stopped
