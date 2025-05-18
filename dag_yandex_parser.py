@@ -4,9 +4,8 @@ from airflow.operators.bash import BashOperator
 from datetime import datetime, timedelta
 
 default_args = {
-    'owner': 'mlops',
+    'owner': 'RealValueAI',
     'depends_on_past': False,
-    'email': ['your_email@example.com'],
     'email_on_failure': True,
     'email_on_retry': False,
     'retries': 1,
@@ -18,7 +17,7 @@ dag = DAG(
     default_args=default_args,
     description='DAG for daily parsing of Yandex Real Estate',
     schedule_interval='@daily',
-    start_date=datetime(2024, 1, 1),
+    start_date=datetime(2025, 1, 1),
     catchup=False,
     tags=['parser', 'yandex'],
 )
