@@ -3,9 +3,8 @@ from airflow.operators.bash import BashOperator
 from datetime import datetime, timedelta
 
 default_args = {
-    'owner': 'mlops',
+    'owner': 'RealValueAI',
     'depends_on_past': False,
-    'email': ['your_email@example.com'],
     'email_on_failure': True,
     'retries': 1,
     'retry_delay': timedelta(minutes=10),
@@ -16,9 +15,9 @@ with DAG(
     default_args=default_args,
     description='Daily training of real estate ML models',
     schedule_interval='@daily',
-    start_date=datetime(2024, 1, 1),
+    start_date=datetime(2025, 1, 1),
     catchup=False,
-    tags=['mlops', 'training'],
+    tags=['training'],
 ) as dag:
 
     run_training = BashOperator(
